@@ -34,13 +34,13 @@ btn.addEventListener("click", function (event) {
             Wdescription.innerText = data.data[0].weather.description;
 
             let temperature = document.getElementById("current-temp");
-            temperature.innerText = Math.floor(data.data[0].temp) + " C"; 
+            temperature.innerText = Math.round(data.data[0].temp) + " C"; 
 
             let windSpeed = document.getElementById("current-wind");
-            windSpeed.innerText = Math.floor(data.data[0].wind_spd) + " m/s";
+            windSpeed.innerText = Math.round(data.data[0].wind_spd) + " m/s";
 
             let humidity = document.getElementById("current-humidity");
-            humidity.innerText = Math.floor(data.data[0].rh) + "%";
+            humidity.innerText = Math.round(data.data[0].rh) + "%";
 
             //hämtar element från html med id och lagrar med icon url
             let currentIconImg = document.getElementById("current-weather-icon");
@@ -80,7 +80,7 @@ btn.addEventListener("click", function (event) {
                 //hämtar p-tagen med id = temperature
                 let tempForecast = weatherDay.querySelector("#temperature");
                 //lagrar temp från api och avrundar
-                tempForecast.innerText = Math.floor(data.data[i].temp) + " C";
+                tempForecast.innerText = Math.round(data.data[i].temp) + " C";
                 //hämtar p-tagen med id = description
                 let descripForecast = weatherDay.querySelector("#description");
                 //lagrar description från api och avrundar
